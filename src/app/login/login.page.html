@@ -1,29 +1,25 @@
 <ion-content class="fundo">
+  <ion-card-content class="conteudo">
 
+    <h1 style="font-size:5em;text-align:center; color: white;width: 100%;margin: 10% 0px;">
+      Circulus<ion-icon name="play-circle"></ion-icon>
+    </h1>
 
-
-  <ion-card-content class="conteudo">    
-
-    <h1 style="font-size:3em;text-align:center; color: white;width: 100%;">
-      Circulus
-      <ion-icon name="play-circle"></ion-icon>
-    </h1> 
-    
 
     <ion-item>
       <ion-label position="floating">Email : </ion-label>
-      <ion-input type="text" [(ngModel)]="email"></ion-input>
+      <ion-input [(ngModel)]="email" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Senha :</ion-label>
-      <ion-input type="password" [(ngModel)]="kata_sandi"></ion-input>
+      <ion-input type="password" [(ngModel)]="senha"></ion-input>
     </ion-item>
     <div margin-vertical text-center id="btn-masuk">
-      
-      <ion-button expand="block" (click)="masukin()" [disabled]="(email=='') || (kata_sandi=='') ">
-          <ion-icon name="play"></ion-icon> Entrar
+
+      <ion-button expand="block" (click)="fazLogin(email, senha)" [disabled]="(email=='') || (senha=='') ">
+        <ion-icon name="play"></ion-icon> Entrar
       </ion-button>
     </div>
-  </ion-card-content>  
+  </ion-card-content>
 
 </ion-content>
