@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Credenciais } from '../models/credenciais.model';
+import { NavController } from '@ionic/angular';
+import { HomePage } from '../home/home.page';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,8 @@ export class LoginPage implements OnInit {
 
   constructor(
     private auth:AuthService,
-    private router: Router) { }
+    private router: Router,
+    private navigate:NavController) { }
 
   ngOnInit() {    
 
@@ -30,7 +33,7 @@ export class LoginPage implements OnInit {
         this.auth.sucessoLogin(body["token"])
           .then(() => {
             console.log("Logado");
-            this.router.navigate(['home']);
+            this.navigate.navigateForward(['home'])
           });
       },
       error => {

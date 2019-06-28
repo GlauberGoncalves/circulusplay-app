@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { API_CONFIG } from '../config/api.config';
 import { UsuarioLocal } from '../models/usuario-local.model';
-let decode = require('jwt-decode');
+import decode from 'jwt-decode';
 
 @Injectable()
 export class AuthService {
