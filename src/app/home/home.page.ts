@@ -1,3 +1,4 @@
+import { Postagem } from './../models/postagem.model';
 import { Component } from '@angular/core';
 import { FeedService } from '../services/feed.service';
 import { Feed } from '../models/feed.model';
@@ -10,11 +11,13 @@ import { Feed } from '../models/feed.model';
 })
 export class HomePage {
 
+  postagem: Postagem;
+
   constructor(private feed: FeedService) {
     
     this.feed.getFeed()
-      .subscribe(response => {
-        console.log(response);
+      .subscribe(response => {            
+        this.postagem =  response.postagens[0];
     },
     error => {});
   }

@@ -18,10 +18,10 @@ import { AuthGuard } from './auth-guard';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    HttpClientModule,    
-    BrowserModule,
+    HttpClientModule,
+    BrowserModule,    
     IonicModule.forRoot(),
-    AppRoutingModule],
+    AppRoutingModule],    
   providers: [
     StatusBar,
     SplashScreen,
