@@ -1,3 +1,4 @@
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -24,6 +25,7 @@ import { AuthGuard } from './auth-guard';
   providers: [
     StatusBar,
     SplashScreen,
+    AuthInterceptorProvider,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AuthService,
     AuthGuard,

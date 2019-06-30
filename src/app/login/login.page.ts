@@ -26,9 +26,7 @@ export class LoginPage implements OnInit {
     let credenciais = {email, senha}
 
     this.auth.authenticate(credenciais)
-      .subscribe(response => {
-        console.log("logou")
-        console.log(response)
+      .subscribe(response => {           
         let body = JSON.parse(response.body);        
         this.auth.sucessoLogin(body["token"])
           .then(() => {

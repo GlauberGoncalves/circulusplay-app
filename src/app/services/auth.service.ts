@@ -27,10 +27,10 @@ export class AuthService {
 
   sucessoLogin(autorizacao : string) {
     return new Promise(resolve => {
-      let tok = autorizacao.substring(7,autorizacao.length);
+      console.log(autorizacao)      
       let user : UsuarioLocal = {
-          token: tok,
-          email: decode(tok)
+          token: autorizacao,
+          email: decode(autorizacao)
       };
       this.storage.setLocalUser(user);
       resolve(true);
