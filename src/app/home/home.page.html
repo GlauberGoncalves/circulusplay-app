@@ -8,8 +8,8 @@
 
 <ion-content>
 
-  <div *ngIf="postagem">
-    <app-post [postagem]="postagem"></app-post>
+  <div *ngFor="let postagem of postagens">        
+    <app-post [postagem]="postagem"></app-post>    
   </div>
 
 </ion-content>

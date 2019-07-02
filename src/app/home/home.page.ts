@@ -11,13 +11,13 @@ import { Feed } from '../models/feed.model';
 })
 export class HomePage {
 
-  postagem: Postagem;
+  postagens: Array<Postagem>;
 
   constructor(private feed: FeedService) {
     
     this.feed.getFeed()
       .subscribe(response => {            
-        this.postagem =  response.postagens[0];
+        this.postagens =  response.postagens;
     },
     error => {});
   }

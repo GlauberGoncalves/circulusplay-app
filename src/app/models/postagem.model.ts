@@ -9,6 +9,6 @@ export interface Postagem {
 	titulo: String;
 	filmeAssistido : Filme;
 	comentarios: Array<ComentarioPostagem>;
-	usuario: Usuario;
+	postadoPor: Usuario;
 
 }
