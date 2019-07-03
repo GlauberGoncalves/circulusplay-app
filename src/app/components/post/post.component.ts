@@ -1,6 +1,8 @@
 import { API_CONFIG } from './../../config/api.config';
 import { Postagem } from './../../models/postagem.model';
 import { Component, OnInit, Input } from '@angular/core';
+import { Route, Router, RouterModule } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-post',
@@ -13,11 +15,17 @@ export class PostComponent implements OnInit {
   imagemFilme: String;
 
 
-  constructor() { }
+  constructor(
+    private router:NavController,    
+  ) { }
 
   ngOnInit() {
     this.imagemFilme = API_CONFIG.urlImage + "/" + this.postagem.filmeAssistido.imagemPoster;    
     console.log(this.postagem)
+  }
+
+  abrirComentarios(){
+    this.router.navigateForward(['/comentarios', {'teste': 'teste mesmo'}]);
   }
 
 }

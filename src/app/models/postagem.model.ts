@@ -10,5 +10,4 @@ export interface Postagem {
 	filmeAssistido : Filme;
 	comentarios: Array<ComentarioPostagem>;
 	postadoPor: Usuario;
-
 }

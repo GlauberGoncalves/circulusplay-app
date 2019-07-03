@@ -33,7 +33,7 @@
         </ion-button>
       </ion-col>
       <ion-col align-self-center text-center>
-        <ion-button fill="outline">
+        <ion-button fill="outline" (click)="abrirComentarios()">
           <ion-icon name="text"></ion-icon>
           <span>{{ postagem.comentarios == null ? '' : postagem.comentarios.length  }}</span>
         </ion-button>
