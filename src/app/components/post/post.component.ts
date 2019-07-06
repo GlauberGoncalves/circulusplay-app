@@ -20,8 +20,10 @@ export class PostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.imagemFilme = API_CONFIG.urlImage + "/" + this.postagem.filmeAssistido.imagemPoster;    
-    console.log(this.postagem)
+    if(this.postagem.filmeAssistido != null){
+      this.imagemFilme = API_CONFIG.urlImage + "/" + this.postagem.filmeAssistido.imagemPoster;
+      console.log(this.postagem);
+    }
   }
 
   abrirComentarios(){

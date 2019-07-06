@@ -17,9 +17,11 @@ export class HomePage {
     
     this.feed.getFeed()
       .subscribe(response => {            
-        this.postagens =  response.postagens;
+        this.postagens =  response.postagens;        
     },
-    error => {});
+    error => {
+      console.log("Erro ao carregar feed de noticias");
+    });
   }
 
 }

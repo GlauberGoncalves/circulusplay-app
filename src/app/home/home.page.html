@@ -1,15 +1,17 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <div *ngFor="let postagem of postagens">        
-    <app-post [postagem]="postagem"></app-post>    
+  <div *ngIf="postagens != null">
+    <div *ngFor="let postagem of postagens">
+      <app-post [postagem]="postagem"></app-post>
+    </div>
   </div>
 
 </ion-content>
