@@ -12,7 +12,7 @@ import { NavController } from '@ionic/angular';
 export class PostComponent implements OnInit {
   
   @Input() postagem: Postagem;  
-  imagemFilme: String;
+  imagemFilme: String = '';
 
 
   constructor(
@@ -21,13 +21,14 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     if(this.postagem.filmeAssistido != null){
-      this.imagemFilme = API_CONFIG.urlImage + "/" + this.postagem.filmeAssistido.imagemPoster;
+      this.imagemFilme = API_CONFIG.urlImage + "/" + this.postagem.filmeAssistido['filme'].imagemPoster;
+      console.log(this.imagemFilme);
       console.log(this.postagem);
     }
   }
 
   abrirComentarios(){
-    this.router.navigateForward(['/comentarios', {'teste': 'teste mesmo'}]);
+    this.router.navigateForward([`/comentarios/${this.postagem.id}`]);
   }
 
 }

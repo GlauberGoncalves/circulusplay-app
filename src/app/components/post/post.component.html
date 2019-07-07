@@ -1,4 +1,4 @@
-<ion-card  *ngIf="postagem">
+<ion-card  *ngIf="postagem" style="padding: 0;margin:0;">
   <ion-card-header>
     <ion-row>
       <ion-col size="4">
@@ -10,9 +10,9 @@
       <ion-col size="8">
         <span class="nome-usuario">{{ postagem.postadoPor.nome }} </span>
         <span>avaliou </span>
-        <span class="classificacao">{{ postagem.filmeAssistido.titulo }}</span>
+        <span class="classificacao">{{ postagem.filmeAssistido.filme.titulo }}</span>
         <span> como </span>
-        <span class="classificacao"> Diamante</span>
+        <span class="classificacao"> {{ postagem.filmeAssistido.qualificacao }}</span>
       </ion-col>
 
     </ion-row>
@@ -21,7 +21,7 @@
     </span>
   </ion-card-header>
 
-  <ion-card-content>
+  <ion-card-content style="padding: 0;margin:0;">
     <img [src]="imagemFilme" [alt]="postagem.filmeAssistido.titulo">
   </ion-card-content>
 
@@ -35,7 +35,7 @@
       <ion-col align-self-center text-center>
         <ion-button fill="outline" (click)="abrirComentarios()">
           <ion-icon name="text"></ion-icon>
-          <span>{{ postagem.comentarios == null ? '' : postagem.comentarios.length  }}</span>
+          <span>{{ postagem.comentarios.length == 0 ? '' : postagem.comentarios.length  }}</span>
         </ion-button>
       </ion-col>
 
