@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: '', redirectTo: 'home', pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'home', loadChildren: './home/home.module#HomePageModule', canActivate: [AuthGuard] },
-  { path: 'comentarios/:id', loadChildren: './comentarios/comentarios.module#ComentariosPageModule' }
+  { path: 'comentarios/:id', loadChildren: './comentarios/comentarios.module#ComentariosPageModule' },
+  { path: 'filmes-assistidos', loadChildren: './filmes-assistidos/filmes-assistidos.module#FilmesAssistidosPageModule' }
 ];
 
 @NgModule({

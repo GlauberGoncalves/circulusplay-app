@@ -1,5 +1,7 @@
 {
   "name": "circulusplay_app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

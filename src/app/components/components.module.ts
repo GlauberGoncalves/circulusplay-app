@@ -2,6 +2,7 @@ import { PostModule } from './post/post.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostComponent } from './post/post.component';
+import { ListaDeFilmesComponent } from './lista-de-filmes/lista-de-filmes.component';
 
 @NgModule({
   declarations: [ ],
@@ -10,7 +11,8 @@ import { PostComponent } from './post/post.component';
     PostModule 
   ],
   exports:[
-    PostComponent
+    PostComponent,
+    ListaDeFilmesComponent
   ]
 })
 export class ComponentsModule { }
